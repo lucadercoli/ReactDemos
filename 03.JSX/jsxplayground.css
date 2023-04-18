@@ -1,0 +1,16 @@
+body {
+    background-color: #F0F0F0;
+}
+
+h1.title {
+    color: fuchsia;
+    text-shadow: 2px 2px #B0B0B0;
+}
+
+div.box {
+    border: 1ps solid black;
+    background-color: #B0B0B0;
+    -webkit-box-shadow: 8px 8px 5px 0px rgba(148,148,148,1);
+    -moz-box-shadow: 8px 8px 5px 0px rgba(148,148,148,1);
+    box-shadow: 8px 8px 5px 0px rgba(148,148,148,1);
+}

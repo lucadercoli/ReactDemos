@@ -1,0 +1,38 @@
+{
+  "name": "8.spa_skeleton",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@microsoft/applicationinsights-web": "^2.0.0-rc4",
+    "@types/jest": "24.0.11",
+    "@types/node": "11.13.4",
+    "@types/react": "16.8.13",
+    "@types/react-dom": "16.8.4",
+    "@types/react-router-dom": "^4.3.2",
+    "@types/reactstrap": "^8.0.1",
+    "bootstrap": "^4.3.1",
+    "jquery": "3.3.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "reactstrap": "^6.3.0",
+    "rimraf": "^2.6.2",
+    "typescript": "3.4.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

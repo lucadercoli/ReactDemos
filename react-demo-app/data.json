@@ -1,0 +1,29 @@
+{
+    "users": [
+        {
+            "id": "1",
+            "userName": "MRossi",
+            "employeeCode": "EMP001"
+        },
+        {
+            "id": 2,
+            "userName": "LVerdi",
+            "employeeCode": "EMP002"
+        },
+        {
+            "id": 3,
+            "userName": "GBrambilla",
+            "employeeCode": "EMP003"
+        },
+        {
+            "id": 4,
+            "userName": "VFumagalli",
+            "employeeCode": "EMP004"
+        },
+        {
+            "id": 5,
+            "userName": "PBianchi",
+            "employeeCode": "EMP005"
+        }
+    ]
+}
