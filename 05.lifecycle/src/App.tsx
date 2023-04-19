@@ -8,11 +8,11 @@ class App extends Component<any, any> {
   constructor(props: any) {
     super(props);
 
-    this.state = { userName: "John", unmount: false };
+    this.state = { userName: "Mario", unmount: false };
   }
 
   toggleUserName = () => {
-    const newValue = this.state.userName === "John" ? "Alessandro" : "John";
+    const newValue = this.state.userName === "Mario" ? "Alessandro" : "Mario";
     this.setState((prevState: any) => {
       return { userName: newValue };
     });
