@@ -63,15 +63,17 @@ class List extends Component<any, any> {
                 </TableCell>
               </TableRow>
             </TableHead>
-            <TableBody>
-              {items.map((item: any, index: number) => (
-                <TableRow key={index}>
-                  <TableCell>{item.name?.common}</TableCell>
-                  <TableCell>{item.population}</TableCell>
-                  <TableCell align="center">{item.region}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
+            {items && (
+              <TableBody>
+                {items?.map((item: any, index: number) => (
+                  <TableRow key={index}>
+                    <TableCell>{item.name?.common}</TableCell>
+                    <TableCell>{item.population}</TableCell>
+                    <TableCell align="center">{item.region}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            )}
           </Table>
         </Paper>
       );
