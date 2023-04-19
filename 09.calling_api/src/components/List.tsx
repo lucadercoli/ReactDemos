@@ -54,23 +54,21 @@ class List extends Component<any, any> {
           <Table>
             <TableHead className={classes.tableHead}>
               <TableRow>
-                <TableCell className={classes.whiteText}>ID</TableCell>
                 <TableCell className={classes.whiteText}>Title</TableCell>
                 <TableCell className={classes.whiteText} align="center">
-                  Category
+                  Population
                 </TableCell>
                 <TableCell className={classes.whiteText} align="center">
-                  Priority
+                  Region
                 </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {items.map((item: any) => (
-                <TableRow key={item.id}>
-                  <TableCell>{item.id}</TableCell>
-                  <TableCell>{item.title}</TableCell>
-                  <TableCell align="center">{item.category}</TableCell>
-                  <TableCell align="center">{item.priority}</TableCell>
+              {items.map((item: any, index: number) => (
+                <TableRow key={index}>
+                  <TableCell>{item.name?.common}</TableCell>
+                  <TableCell>{item.population}</TableCell>
+                  <TableCell align="center">{item.region}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
