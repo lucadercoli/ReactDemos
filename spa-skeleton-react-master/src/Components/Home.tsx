@@ -1,21 +1,27 @@
-import React, { Component } from 'react'
-import { Container, Row, Col } from 'reactstrap';
+import { Grid } from "@mui/material";
+import React, { Component } from "react";
 
 export default class Home extends Component {
   render() {
     return (
-      <Container>
-        <Row>
-          <Col className="col-12 text-center">
+      <Grid xs={12}>
+        <Grid xs={12}>
+          <Grid xs={3}></Grid>
+          <Grid xs={6}>
             <h1>Welcome to the Help Desk System</h1>
-          </Col>
-        </Row>
-        <Row>
-          <Col className="col-12 text-center">
-            <img src="images/welcome.png" />
-          </Col>
-        </Row>
-      </Container>
-    )
+          </Grid>
+          <Grid xs={3}></Grid>
+        </Grid>
+        <Grid>
+          <Grid xs={12}>
+            <Grid xs={3}></Grid>
+            <Grid xs={6}>
+              <img src="images/welcome.png" />
+            </Grid>
+            <Grid xs={3}></Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    );
   }
 }

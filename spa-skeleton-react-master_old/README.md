@@ -1,14 +1,11 @@
 # Single Page Application Skeleton (in React)
-
 Questo progetto è parte del corso di ReactJS e il suo utilizzo è a solo scopo didattico.
 Per crearlo è stato utilizzzata la CLI [Create React App](https://github.com/facebook/create-react-app).
 
 # Attività da svolgere
-
 1. Aggiungere la list view con l'elenco dei Tickets
-
-   - Open New Ticket (button)
-   - Edit / Delete del singolo Ticket
+	- Open New Ticket (button)
+	- Edit / Delete del singolo Ticket
 
 2. Aggiungere la form di inserimento nuovo Ticket
 
@@ -16,66 +13,63 @@ Per crearlo è stato utilizzzata la CLI [Create React App](https://github.com/fa
 
 4. Aggiungere la cancellazione di un Ticket
 
-_Tutte le funzionalità dovranno utilizzare un servizio che
-implementa le funzionalità CRUD (GET, POST, PUT, DELETE)
-comunicando con le REST API disponibili all'URL indicato
-nella documentazione._
+*Tutte le funzionalità dovranno utilizzare un servizio che 
+implementa le funzionalità CRUD (GET, POST, PUT, DELETE) 
+comunicando con le REST API disponibili all'URL indicato 
+nella documentazione.*
+
 
 # Documentazione
-
 ## Accesso al servizio REST
+**URL (Anonymous):** https://icticketing.azurewebsites.net/api/ticketanon
 
-**URL (Anonymous):** https://crudcrud.com/ e copiare la url completa es: https://crudcrud.com/api/56ced3c2e13b455795de69ef2ff9fd6f
+**URL (Basic):** https://icticketing.azurewebsites.net/api/ticket
 
 **Come specificare HTTP Verb, Body e Headers nelle chiamate HTTP**
-
 ```ts
+basicAuthAccount: string = "guest1:Gu&st!";  // user:password
+
 // "Accept" e "Content-Type" sono NECESSARI per le richieste PUT e POST
 // "Authorization" serve se si usa il servizio con Basic authentication
 basicHeaders: Headers = new Headers({
-  Accept: "application/json",
-  "Content-Type": "application/json",
-  Authorization: "Basic " + btoa(this.basicAuthAccount),
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "Authorization": "Basic " + btoa(this.basicAuthAccount)
 });
 
-const promise = await fetch(this.apiURL, {
-  method: "POST",
-  headers: this.basicHeaders,
-  body: JSON.stringify(ticket),
+const promise = await fetch(this.apiURL, { 
+    method: 'POST',
+    headers: this.basicHeaders,
+    body: JSON.stringify(ticket)
 });
 ```
 
 ## Form di Creazione Ticket
-
 **Campi**
-
-- _Title_ (testo)
-- _Description_ (testo multi linea)
-- _Category_ (combo)
-  - Unknown (valore = 1)
-  - Development (2)
-  - System (3)
-- _Priority_ (combo)
-  - Low (valore = 1)
-  - Normal (2)
-  - High (3)
+- *Title* (testo)
+- *Description* (testo multi linea)
+- *Category* (combo)
+    - Unknown (valore = 1)
+    - Development (2)
+    - System (3)
+- *Priority* (combo)
+    - Low (valore = 1)
+    - Normal (2)
+    - High (3)
 
 ## Form di Modifica Ticket
-
 **Campi**
-
-- _Title_ (testo)
-- _Description_ (testo multi linea)
-- _Category_ (combo, valori come sopra)
-- _Priority_ (combo, valori come sopra)
-- _State_ (combo)
-  - New (valore = 1)
-  - On Going (2)
-  - Close (3)
+- *Title* (testo)
+- *Description* (testo multi linea)
+- *Category* (combo, valori come sopra)
+- *Priority* (combo, valori come sopra)
+- *State* (combo)
+    - New (valore = 1)
+    - On Going (2)
+    - Close (3)
 
 ## Nota sul modello Ticket
-
-Nella cartella Models è presente una classe Ticket,
+Nella cartella Models è presente una classe Ticket, 
 da utilizzarsi per il popolamento della vista tabellare (punto 1).
 Questo modello NON è adatto per il salvataggio di un nuovo Ticket / Ticket modificato.
 

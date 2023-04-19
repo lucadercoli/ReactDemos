@@ -8,7 +8,7 @@ import {
   TableRow,
   TableCell,
   TableBody,
-} from "@material-ui/core";
+} from "@mui/material";
 import AppStyles from "../styles";
 
 class List extends Component<any, any> {
@@ -81,4 +81,4 @@ class List extends Component<any, any> {
   }
 }
 
-export default withStyles(AppStyles)(List);
+export default List;
