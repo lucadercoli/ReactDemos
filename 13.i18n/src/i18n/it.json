@@ -1,0 +1,13 @@
+{
+    "title": "Benvenuti",
+    "content": "Benvenuti nel meraviglioso mondo di React!",
+    "alt": "Un bellissimo faro in Puglia (Capo Pippo)",
+    "mycomponentlabel": "Ecco il mio bel component!",
+    "interpol": "Questa stringa è {{nome}} {{cognome}} ",
+    "func-name": "Localizzazione in <Translation>",
+    "<0>Welcome to React</0>": "<0>Benvenuti in React con react-i18next</0>",
+    "<0>Have a nice day</0>": "<0>Buona giornata!</0>",
+    "date": "La data corrente è {{date, DD/MM/YYYY}}",
+    "uppercase": "{{text, uppercase}} tutto in maiuscolo",
+    "main_title": "Chiave con punto"
+}

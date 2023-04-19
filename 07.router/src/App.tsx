@@ -9,12 +9,12 @@ import Topics from "./Topics";
 import NoMatch from "./NoMatch";
 import TopicsSubOne from "./TopicsSubOne";
 import TopicsSubTwo from "./TopicsSubTwo";
+import Demo from "./Demo";
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        {" "}
         {/* 1. Render a Router component at the top of your app. */}
         <div>
           <ul>
@@ -34,12 +34,21 @@ class App extends Component {
 
           <Routes>
             {/* Match a single route */}
-            <Route path="/" element={<Home />} />{" "}
+            <Route path="/" element={<Home />} />
             {/* 3. Finally, render a Route to show some UI when the user visits this route */}
             <Route path="/about" element={<About />} />
             <Route path="/topics/*" element={<Topics />}>
               <Route path={"subone"} element={<TopicsSubOne />} />
-              <Route path={"details/:id"} Component={TopicsSubTwo} />
+              <Route path={"details/:id"} element={<TopicsSubTwo />} />
+              <Route
+                path={"details/:id/:pagesize"}
+                element={<TopicsSubTwo />}
+              />
+            </Route>
+            <Route path="demo">
+              <Route index element={<Demo />} />
+              <Route path=":param1" element={<Demo />} />
+              <Route path=":param1/:param2" element={<Demo />} />
             </Route>
             {/* <Route path="/details/:id/:pageSize?" element={<Details />} /> */}
             <Route element={<NoMatch />} />

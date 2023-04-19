@@ -8,6 +8,7 @@ const TopicsSubTwo = () => {
   return (
     <div>
       <h1>Topic #{params.id}</h1>
+      {params.pagesize && <h1>PageSize #{params.pagesize}</h1>}
     </div>
   );
 };

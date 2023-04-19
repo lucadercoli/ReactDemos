@@ -1,0 +1,13 @@
+{
+    "title": "Welcome",
+    "content": "Welcome in the wonderful world of React!",
+    "alt": "A great lighthouse in Puglia (Pippo Cape)",
+    "mycomponentlabel": "Here is my super component!",
+    "interpol": "This string is {{nome}} {{cognome}} ",
+    "func-name": "Localize in <Translation>",
+    "<0>Welcome to React</0>": "<0>Welcome to React and react-i18next</0>",
+    "<0>Have a nice day</0>": "<0>Have a nice day</0>",
+    "date": "The current date is {{date, MM/DD/YYYY}}",
+    "uppercase": "{{text, uppercase}} just uppercased",
+    "main_title": "Key with dot"
+}
