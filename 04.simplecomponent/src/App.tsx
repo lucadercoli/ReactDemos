@@ -7,6 +7,7 @@ import ThirdComponent from "./ThirdComponent";
 import StatefulComponent from "./StatefulComponent";
 import ItemsList from "./ItemsList";
 import Glossary from "./Glossary";
+import RowsComponent from "./RowsComponent";
 
 class App extends Component<any, any> {
   items: string[] = ["Item 1", "Item 2", "Item 3"];
@@ -49,8 +50,13 @@ class App extends Component<any, any> {
             </p>
           </ThirdComponent> */}
           {/* <Glossary items={this.terms} /> */}
-          <StatefulComponent></StatefulComponent>
+          {/* <StatefulComponent></StatefulComponent> */}
           {/* <ItemsList items={this.items}></ItemsList> */}
+          <table>
+            <tbody>
+              <RowsComponent items={this.terms}></RowsComponent>
+            </tbody>
+          </table>
           <a
             className="App-link"
             href="https://reactjs.org"
