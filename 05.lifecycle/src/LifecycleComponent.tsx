@@ -1,61 +1,72 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class LifecycleComponent extends Component<any, any> {
-    constructor(props: any) {
-        super(props);
+  constructor(props: any) {
+    super(props);
 
-        this.state = { company: 'iCubed' };
-    }
+    this.state = { company: "iCubed" };
+  }
 
-    toggleCompany = () => {
-        const newValue = this.state.company === 'iCubed' ? 'ZeusLab' : 'iCubed';
-        this.setState((prevState: any) => {
-            return {company: newValue };
-        });
-    }
-    
-    render() {
-        return (
-            <div>
-                <h1>=== NEW LIFECYCLE ===</h1>
-                <h3>Hello {this.props.name} from {this.state.company}.<br/>
-                Please, check the Console in the Development Tools (F12)</h3>
-                <button onClick={this.toggleCompany}>Switch Company</button>
-            </div>
-        )
-    }
+  toggleCompany = () => {
+    const newValue = this.state.company === "iCubed" ? "ZeusLab" : "iCubed";
+    this.setState((prevState: any) => {
+      return { company: newValue };
+    });
+  };
 
-    componentDidMount() {
-        console.log("[componentDidMount] l’istanza di un componente è stata agganciata o ridisegnata.");
-    }
+  render() {
+    return (
+      <div>
+        <h1>=== NEW LIFECYCLE ===</h1>
+        <h3>
+          Hello {this.props.name} from {this.state.company}.<br />
+          Please, check the Console in the Development Tools (F12)
+        </h3>
+        <button onClick={this.toggleCompany}>Switch Company</button>
+      </div>
+    );
+  }
 
-    componentWillUnmount() {
-        console.log("[componentWillUnmount] l'istanza di un component sta per essere sganciata o rimossa.");
-    }
+  componentDidMount() {
+    console.log(
+      "[componentDidMount] l’istanza di un componente è stata agganciata o ridisegnata."
+    );
+  }
 
-    shouldComponentUpdate(nextProps: any, nextState: any) {
-        console.log(
-            "[shouldComponentUpdate] l'istanza di un component sta per essere aggiornata." + 
-            " Props: " + nextProps.name + 
-            " State: " + nextState.company
-        );
+  componentWillUnmount() {
+    console.log(
+      "[componentWillUnmount] l'istanza di un component sta per essere sganciata o rimossa."
+    );
+  }
 
-        return true;
-    }
+  shouldComponentUpdate(nextProps: any, nextState: any) {
+    console.log(
+      "[shouldComponentUpdate] l'istanza di un component sta per essere aggiornata." +
+        " Props: " +
+        nextProps.name +
+        " State: " +
+        nextState.company
+    );
 
-    componentDidUpdate() {
-        console.log("[componentDidUpdate] l'istanza di un component è stata aggiornata.");
-    }
+    return true;
+  }
 
-    static getDerivedStateFromProps(nextProps: any) {
-        console.log("[getDerivedStateFromProps] ??? Value: " + nextProps.name);
+  componentDidUpdate() {
+    console.log(
+      "[componentDidUpdate] l'istanza di un component è stata aggiornata."
+    );
+  }
 
-        return {};
-    }
+  static getDerivedStateFromProps(nextProps: any) {
+    console.log("[getDerivedStateFromProps] ??? Value: " + nextProps.name);
 
-    getSnapshotBeforeUpdate(prevProps: any, prevState: any) {
-        console.log("[getSnapshotBeforeUpdate] ??? ");
+    return {};
+  }
 
-        return null;
-    }
+  getSnapshotBeforeUpdate(prevProps: any, prevState: any) {
+    console.log("[getSnapshotBeforeUpdate] ??? ");
+    console.log({ prevProps: prevProps });
+    console.log({ prevState: prevState });
+    return null;
+  }
 }
