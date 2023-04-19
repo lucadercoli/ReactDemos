@@ -31,7 +31,7 @@ class WebApiForm extends Component<any, any> {
     };
   }
 
-  apiURL: string = "https://icticketing.azurewebsites.net/api/state";
+  apiURL: string = "https://restcountries.com/v3.1/all"; //"https://icticketing.azurewebsites.net/api/state";
 
   async getState() {
     try {
@@ -51,7 +51,13 @@ class WebApiForm extends Component<any, any> {
   componentDidMount() {
     this.getState().then(
       (data: any) => {
-        this.setState({ states: data });
+        console.log(data);
+        this.setState({
+          states: data?.map((d: any) => {
+            console.log(d?.name?.official);
+            return { description: d?.name?.official };
+          }),
+        });
       },
       (err: any) => {
         this.setState({ states: [] });
