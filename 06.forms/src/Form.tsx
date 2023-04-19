@@ -39,9 +39,25 @@ class Form extends Component<any, any> {
     event.preventDefault();
   };
 
-  //   handleChange = (event: any) => {
-  //     this.setState({ value: event.target.value });
-  //   };
+  // nameHandleChange = (event: any) => {
+  //   const target = event.target;
+  //   const value = target.value;
+  //   const name = target.name;
+  //   console.log({ value: value });
+  //   this.setState({
+  //     name: value,
+  //   });
+  // };
+
+  // roleHandleChange = (event: any) => {
+  //   const target = event.target;
+  //   const value = target.value;
+  //   const name = target.name;
+  //   console.log({ value: value });
+  //   this.setState({
+  //     role: value,
+  //   });
+  // };
 
   /* TYPED EVENT OBJECTS - THEY DON'T WORK WITH REACT MATERIAL UI !!!
     /* handleTextAreaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -87,10 +103,10 @@ class Form extends Component<any, any> {
   handleChange = (event: any) => {
     const target = event.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = target.name;
+    const filedName = target.name;
 
     this.setState({
-      [name]: value,
+      [filedName]: value,
     });
   };
 
@@ -115,6 +131,7 @@ class Form extends Component<any, any> {
                   name="name"
                   label="Name"
                   value={this.state.name}
+                  // onChange={this.nameHandleChange}
                   onChange={this.handleChange}
                   margin="normal"
                   InputProps={{
@@ -135,6 +152,7 @@ class Form extends Component<any, any> {
                   labelId="demo-simple-select-label"
                   name="role"
                   value={this.state.role}
+                  // onChange={this.handleChange}
                   onChange={this.handleChange}
                 >
                   <MenuItem value={"na"}>Select a Role</MenuItem>

@@ -27,19 +27,15 @@ class WebApiForm extends Component<any, any> {
       role: "na",
       date: moment().format("YYYY-MM-DD"),
       state: "na",
-      states: [],
+      countries: [],
     };
   }
 
   apiURL: string = "https://restcountries.com/v3.1/all"; //"https://icticketing.azurewebsites.net/api/state";
 
-  async getState() {
+  async getCountries() {
     try {
-      var promise = await fetch(this.apiURL, {
-        headers: new Headers({
-          Authorization: "Basic " + btoa("guest1:Gu&st!"),
-        }),
-      });
+      var promise = await fetch(this.apiURL);
 
       const data = await promise.json();
       return data;
@@ -49,18 +45,18 @@ class WebApiForm extends Component<any, any> {
   }
 
   componentDidMount() {
-    this.getState().then(
+    this.getCountries().then(
       (data: any) => {
         console.log(data);
         this.setState({
-          states: data?.map((d: any) => {
+          countries: data?.map((d: any) => {
             console.log(d?.name?.official);
             return { description: d?.name?.official };
           }),
         });
       },
       (err: any) => {
-        this.setState({ states: [] });
+        this.setState({ countries: [] });
       }
     );
   }
@@ -97,7 +93,7 @@ class WebApiForm extends Component<any, any> {
   render() {
     const { classes } = this.props;
 
-    const stateOptions = this.state.states.map(
+    const stateOptions = this.state.countries.map(
       (item: { id: number; description: string }) => (
         <MenuItem key={item.id} value={item.description}>
           {item.description}
