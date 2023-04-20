@@ -38,7 +38,7 @@ export default class NavigationBar extends Component<any, any> {
         >
           <Container>
             <NavbarBrand tag={RRNL} to="/">
-              <img src="images/logo.jpg" />
+              <img src="/images/logo.jpg" />
               &nbsp;Help Desk System
             </NavbarBrand>
             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />

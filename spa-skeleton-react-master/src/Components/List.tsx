@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import TicketDataService from "../Services/TicketDataService";
 import { Table } from "reactstrap";
 import Ticket from "../Models/Ticket";
+import { Navigate } from "react-router-dom";
 
 class List extends Component<any, any> {
   constructor(props: any) {
@@ -11,6 +12,7 @@ class List extends Component<any, any> {
       error: null,
       loading: true,
       items: [],
+      itemId: "",
     };
   }
 
@@ -39,6 +41,15 @@ class List extends Component<any, any> {
           laoding: false,
           error,
         });
+        service.addTicket({
+          category: "Categoria",
+          description: "descrizione",
+          id: 1,
+          issueDate: new Date(),
+          priority: "High",
+          state: "In Progress",
+          title: "Titolo",
+        });
       }
     );
 
@@ -54,9 +65,17 @@ class List extends Component<any, any> {
     // });
   }
 
+  showDetails = (id: string) => {
+    debugger;
+    this.setState({ itemId: id });
+  };
+
   render() {
     const { classes } = this.props;
-    const { error, loading, items } = this.state;
+    const { error, loading, items, itemId } = this.state;
+
+    if (itemId != "")
+      return <Navigate to={`/tickets/${itemId}`} replace={true} />;
 
     if (error) {
       return <div>Error: {error.message}</div>;
@@ -80,7 +99,7 @@ class List extends Component<any, any> {
           {items && (
             <tbody>
               {items?.map((item: any, index: number) => (
-                <tr key={index}>
+                <tr key={index} onClick={() => this.showDetails(item._id)}>
                   <td>{item.id}</td>
                   <td>{item.issueDate}</td>
                   <td>{item.category}</td>

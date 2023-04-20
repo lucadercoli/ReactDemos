@@ -1,12 +1,10 @@
-export default class Ticket {
-    constructor(
-        public id: number,
-        public issueDate: Date,
-        public category: string,
-        public title: string,
-        public description: string,
-        public priority: string,
-        public state: string
-    ) {
-    }
+export default interface Ticket {
+  _id?: string;
+  id: number;
+  issueDate: Date;
+  category: string;
+  title: string;
+  description: string;
+  priority: string;
+  state: string;
 }
