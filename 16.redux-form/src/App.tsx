@@ -1,21 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import SimpleForm from './components/SimpleForm';
-import FullForm from './components/FullForm';
-import { Provider } from 'react-redux';
-import ValidatedForm from './components/ValidatedForm';
-import { store } from './Store';
-import { Container, Row, Col } from 'reactstrap';
-import PeopleForm from './components/PeopleForm';
-import PeopleList from './components/PeopleList';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import SimpleForm from "./components/SimpleForm";
+import FullForm from "./components/FullForm";
+import { Provider } from "react-redux";
+import ValidatedForm from "./components/ValidatedForm";
+import { store } from "./Store";
+import { Container, Row, Col } from "reactstrap";
+import PeopleForm from "./components/PeopleForm";
+import PeopleList from "./components/PeopleList";
 
 const showResults = (values: any) =>
-  new Promise(resolve => {
+  new Promise<void>((resolve) => {
     setTimeout(() => {
       // delayed for Test purposes
-      const attachmentCount = values.attachment !== undefined && values.attachment.length;
-      window.alert(`You submitted:\n\n${JSON.stringify(values, null, 2)}\n\n(Attachments: ${attachmentCount})`);
+      const attachmentCount =
+        values.attachment !== undefined && values.attachment.length;
+      window.alert(
+        `You submitted:\n\n${JSON.stringify(
+          values,
+          null,
+          2
+        )}\n\n(Attachments: ${attachmentCount})`
+      );
       resolve();
     }, 500);
   });
@@ -38,20 +45,20 @@ const PeopleContainer: React.FC = () => {
       </Row>
     </Container>
   );
-}
+};
 
-const FirstStepsContainer : React.FC = () => {
+const FirstStepsContainer: React.FC = () => {
   return (
     <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          {/*<SimpleForm onSubmit={showResults} /> message="Hello Rob!" />
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        {/*<SimpleForm onSubmit={showResults} /> message="Hello Rob!" />
           <FullForm onSubmit={showResults} /> */}
-          <ValidatedForm onSubmit={showResults}></ValidatedForm>
-        </header>
-      </div>
+        <ValidatedForm onSubmit={showResults}></ValidatedForm>
+      </header>
+    </div>
   );
-}
+};
 
 const App: React.FC = () => {
   return (
