@@ -15,7 +15,7 @@ interface Params {
 
 type Props = WithRouterProps<Params>;
 
-class TicketDetails extends Component<any, any> {
+class TicketDetails extends Component<Props, any> {
   constructor(props: any) {
     super(props);
 
@@ -44,7 +44,7 @@ class TicketDetails extends Component<any, any> {
   };
 
   render() {
-    const { classes, handleClose } = this.props;
+    // const { classes, handleClose } = this.props;
     const { error, loading, item, show } = this.state;
 
     if (!show) return <Navigate to="/tickets" replace={true} />;
@@ -63,9 +63,9 @@ class TicketDetails extends Component<any, any> {
         // priority: string;
         // state: string;
         <>
-          <Modal show={show} onHide={handleClose}>
+          <Modal show={show} onHide={this.handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>item.title</Modal.Title>
+              <Modal.Title>{item.title}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <Form>
